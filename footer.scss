@@ -1,12 +1,12 @@
 footer {
   width: 100%;
   height: 340px;
-  @include flex-column();
+  @include flex-column;
   .about {
     width: 100%;
     height: 250px;
     background: #353c65;
-    @include flex();
+    @include flex;
     section {
       width: $article;
       height: 110px;
@@ -34,7 +34,7 @@ footer .copyright {
   width: 100%;
   height: 90px;
   background: #2c3154;
-  @include flex();
+  @include flex;
   h5 {
     width: $article;
     height: 40px;

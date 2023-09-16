@@ -1,10 +1,10 @@
 .ourteam {
   width: 100%;
   height: 100vh;
-  @include flex();
+  @include flex;
   .subcontainer {
     width: $subcontainer;
-    @include flex-between();
+    @include flex-between;
     article {
       width: 270px;
       img:only-of-type {

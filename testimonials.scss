@@ -10,13 +10,13 @@
     background-repeat: no-repeat;
     section {
       width: 50%;
-      @include flex-column();
+      @include flex-column;
     }
   }
   .testimonials__dots {
     width: 100%;
     height: 45px;
-    @include flex();
+    @include flex;
   }
 }
 .testimonials section {

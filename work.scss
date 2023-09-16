@@ -1,7 +1,7 @@
 .work {
   width: 100%;
   height: 100vh;
-  @include flex();
+  @include flex;
   .work__grid {
     display: grid;
     grid-template-columns: repeat(4, 380px);
@@ -36,7 +36,7 @@
   .work__grid__fon > .text {
     width: 100%;
     height: 100%;
-    @include flex-column();
+    @include flex-column;
     position: absolute;
     transition: all 0.5s linear 0s;
   }
