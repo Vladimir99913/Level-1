@@ -1,0 +1,26 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin button {
+  border: none;
+  cursor: pointer;
+}
+@mixin text($fs, $fw, $ff, $fc) {
+  font-size: $fs;
+  font-weight: $fw;
+  font-family: $ff;
+  color: $fc;
+}
+@mixin border-bottom($s, $c) {
+  border-bottom: $s solid $c;
+}

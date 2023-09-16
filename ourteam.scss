@@ -1,0 +1,104 @@
+.ourteam {
+  width: 100%;
+  height: 100vh;
+  @include flex();
+  .subcontainer {
+    width: $subcontainer;
+    @include flex-between();
+    article {
+      width: 270px;
+      img:only-of-type {
+        width: 270px;
+        height: 270px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.ourteam .subcontainer article {
+  h4 {
+    height: 30px;
+    line-height: 30px;
+    @include text(24px, 700, $Raleway, $color2);
+    margin: 30px 0 5px;
+  }
+  h5 {
+    &:first-of-type {
+      height: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+      @include text(18px, 400, $Raleway, $color4);
+    }
+    &:nth-of-type(2) {
+      height: 170px;
+      line-height: 21.13px;
+      @include text(18px, 400, $Raleway, $color6);
+      margin: 15px 0 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ourteam {
+    .subcontainer {
+      width: 992;
+      article {
+        width: 225px;
+        img:only-of-type {
+          width: 225px;
+          height: 225px;
+        }
+      }
+    }
+  }
+  .ourteam .subcontainer article {
+    h4 {
+      height: 25px;
+      line-height: 25px;
+      font-size: 18px;
+      margin: 25px 0 5px;
+    }
+    h5 {
+      &:first-of-type {
+        height: 15px;
+        line-height: 15px;
+        font-size: 14px;
+      }
+      &:nth-of-type(2) {
+        height: 130px;
+        line-height: 16.44px;
+        font-size: 14px;
+        margin: 20px 0 40px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .ourteam {
+    height: 2350px;
+    align-items: flex-start;
+    .subcontainer {
+      width: 288;
+      @include flex-column;
+      article {
+        width: 280px;
+        img:only-of-type {
+          width: 280px;
+          height: 225px;
+        }
+      }
+    }
+  }
+  .ourteam .subcontainer article {
+    h5 {
+      &:nth-of-type(2) {
+        height: 95px;
+        font-size: 13px;
+        margin: 40px 0 55px;
+      }
+    }
+  }
+  .ourteam .subcontainer article:not(:nth-of-type(4)) {
+    margin-bottom: 55px;
+  }
+}

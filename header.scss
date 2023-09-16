@@ -1,0 +1,234 @@
+header {
+  width: 100%;
+  height: 750px;
+  background: linear-gradient(rgba(37, 43, 73, 0.8), rgba(37, 43, 73, 0.8)),
+    url(./img/img.svg);
+  background-size: cover;
+  @include flex();
+  .subcontainer {
+    width: $subcontainer;
+    @include flex-column();
+    section {
+      width: 100%;
+      height: 100px;
+      @include flex-between();
+      @include border-bottom(1px, $color5);
+      img {
+        z-index: 5;
+      }
+    }
+  }
+}
+header {
+  .burger {
+    height: 20px;
+    width: 30px;
+    display: none;
+    position: relative;
+    z-index: 5;
+    top: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: $color1;
+      bottom: 0;
+      transition: all 0.3s linear 0s;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: $color1;
+      top: 0;
+      transition: all 0.3s linear 0s;
+    }
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: $color1;
+      position: absolute;
+      top: 9px;
+      transition: all 0.3s linear 0s;
+    }
+  }
+}
+nav {
+  width: 670px;
+  height: 100%;
+  display: flex;
+  button {
+    height: 100%;
+    width: 134px;
+    @include text(13px, 700, $Raleway, $color1);
+    @include button();
+    transition: all 0.5s linear 0s;
+    text-transform: uppercase;
+    background-color: transparent;
+    &:hover {
+      @include border-bottom(3px, $color5);
+    }
+    &:active {
+      @include border-bottom(3px, $color3);
+      color: $color3;
+    }
+  }
+}
+header {
+  h1 {
+    height: 150px;
+    width: $subcontainer;
+    line-height: 75.14px;
+    @include text(64px, 900, $Raleway, $color1);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 130px 0 30px;
+  }
+  p {
+    height: 55px;
+    width: $subcontainer;
+    line-height: 28.18px;
+    @include text(24px, 400, $Raleway, $color1);
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  button:only-of-type {
+    height: 80px;
+    width: $article;
+    background: $color4;
+    @include text(24px, 900, $Raleway, $color1);
+    @include button();
+    margin-bottom: 120px;
+    transition: all 0.5s linear 0s;
+    &:hover {
+      background: $color3;
+    }
+    &:active {
+      background: $color4;
+      box-shadow: 4px 4px 30px 0 $color4;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 770px;
+    .subcontainer {
+      width: 992px;
+      img {
+        width: 230px;
+      }
+    }
+  }
+  nav {
+    width: 560px;
+    button {
+      width: 110px;
+      font-size: 12px;
+    }
+  }
+  header {
+    h1 {
+      height: 110px;
+      width: 992px;
+      line-height: 56.35pxpx;
+      font-size: 48px;
+      margin: 155px 0 60px;
+    }
+    p {
+      height: 40px;
+      width: 984px;
+      line-height: 21.13px;
+      font-size: 18px;
+      margin-bottom: 90px;
+    }
+    button:only-of-type {
+      width: 315px;
+      margin-bottom: 125px;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  body.lock {
+    overflow: hidden;
+  }
+  header {
+    height: 575px;
+    background-position: center;
+    .subcontainer {
+      width: 288px;
+      section {
+        height: 55px;
+      }
+      img {
+        width: 130px;
+        height: 55px;
+      }
+    }
+  }
+  nav {
+    position: fixed;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 575px;
+    width: 320px;
+    top: -100%;
+    left: 0;
+    background: linear-gradient(rgba(37, 43, 73, 0.8), rgba(37, 43, 73, 0.8)),
+      url(./img/img.svg);
+    background-position: top;
+    padding-top: 55px;
+    transition: all 0.5s linear 0s;
+    button {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20px;
+    }
+  }
+  header {
+    h1 {
+      height: 210px;
+      width: 280px;
+      line-height: 42.26px;
+      font-size: 36px;
+      margin: 50px 0 30px;
+    }
+    p {
+      height: 65px;
+      width: 285px;
+      line-height: 16.44px;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+    button:only-of-type {
+      width: 280px;
+      margin-bottom: 50px;
+    }
+  }
+  header {
+    .burger {
+      display: block;
+      &.active::after {
+        transform: rotate(45deg);
+        bottom: 9px;
+      }
+      &.active::before {
+        transform: rotate(-45deg);
+        top: 9px;
+      }
+      &.active span {
+        scale: 0;
+      }
+    }
+    nav.active {
+      top: 0;
+      visibility: visible;
+    }
+  }
+}
